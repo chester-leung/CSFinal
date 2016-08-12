@@ -26,13 +26,20 @@ public class MainActivity extends AppCompatActivity {
      */
     public void send(View v)
     {
-        EditText answer = (EditText) findViewById((R.id.user_input));
+       EditText answer = (EditText) findViewById((R.id.user_input));
         String answer1 = answer.getText().toString();
-        int answer2 = Integer.parseInt(answer1); //captures user input for highest integer generated
+        //captures user input for highest integer generated
 
-        Intent intent = new Intent(MainActivity.this, test.class);
-        intent.putExtra("userInput", answer2);
-        MainActivity.this.startActivity(intent);
+        if (answer1.equals(""))
+        {
+            Toast.makeText(this, "Please enter a number", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            int answer2 = Integer.parseInt(answer1);
+            Intent intent = new Intent(MainActivity.this, test.class);
+            intent.putExtra("userInput", answer2);
+            MainActivity.this.startActivity(intent);
+        }
     }
 
 }
