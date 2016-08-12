@@ -21,7 +21,7 @@ public class test extends AppCompatActivity {
     int numCorrect;
     boolean correct = false;
     boolean one = false;
-    int multiplier;
+    int multiplier = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
